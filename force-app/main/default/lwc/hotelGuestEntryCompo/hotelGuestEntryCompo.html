@@ -1,0 +1,29 @@
+<template>
+
+
+    <lightning-card title="Hotel Guest Entry Form" icon-name="custom:custom6">
+        <div>
+            <lightning-input type="text" value={vFirstName} class="nameCmp" name="firstName" label= "First Name" onchange={firstNameHandler} placeholder="John" required="true"></lightning-input>
+            <lightning-input type="text" value={vLastName} name="lastName" label= "Last Name" onchange={lastNameHandler} placeholder="Doe"></lightning-input>
+            <lightning-input type="tel" value={vPhone} name="phone" label= "Phone" placeholder="999999999" onchange={phoneHandler}></lightning-input>
+            <lightning-input type="Email" value={vEmail} name="email" label= "Email" placeholder="John@gmail.com" onchange={emailHandler}></lightning-input>
+            <lightning-input type="number" value={vAdult} name="adult" label= "Adults" onchange={adultHandler}></lightning-input>
+            <lightning-input type="number" value={vChildren} name="children" label= "Children" onchange={childrenHandler}></lightning-input>
+            <lightning-input type="text" value={vCity} name="city" label= "City" onchange={cityHandler}></lightning-input>
+            <lightning-combobox  value={vStarType} name="starType" label= "Star Type" options={options} onchange={starTypeHandler}></lightning-combobox>
+            <lightning-input type="Date" value={vCheckIn} name="checkIn" label= "Check-In"  onchange={checkInHandler}></lightning-input>
+            <lightning-input type="Date" value={vCheckOut} name="checkOut" label= "Check-Out" onchange={checkOutHandler}></lightning-input>
+            <lightning-button variant="Brand" label="Submit" title="Submit and Search Hotels" onclick={createGuestRec}></lightning-button>
+            <lightning-button variant="destructive-text" label="Cancel" onclick={resetFormValues} ></lightning-button>
+            
+        </div>
+        
+        <template if:true={vGuestRecordID}>
+            <div> <!-- Capital letters of component name become lowercased and prefixed with a hyphen -->
+                <c-hotel-hotel-list-compo vcustomerid={vGuestRecordID} vhotelcity={vCity} vhoteltype={vStarType}>
+                </c-hotel-hotel-list-compo>
+            
+            </div>
+        </template>
+    </lightning-card>
+</template>

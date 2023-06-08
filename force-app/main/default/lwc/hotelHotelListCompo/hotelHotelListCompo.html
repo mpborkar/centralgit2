@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Select Hotel from the list below" icon-name="custom:custom8">
+        <div>
+    
+            Find below are the options as per the requirement entered 
+            <lightning-datatable
+                key-field="Id"
+                data={vHotelList.data}
+                columns={hotelcolumns}
+                max-row-selection= "1"
+                onrowselection={handleRowAction}
+                >
+                
+            </lightning-datatable>
+            
+            <lightning-button variant="Brand" label="Select and Submit"  onclick={selectfinalhotel}></lightning-button>
+
+        </div>
+
+        <template if:true={compocheck}> 
+            <div> <!-- Capital letters of component name become lowercased and prefixed with a hyphen -->           
+                <c-hotel-payment-entry-compo vfinalcustid= {vcustomerid} vfinalhotelid={selectedrows}>            
+                </c-hotel-payment-entry-compo>
+            </div>
+         </template> 
+</lightning-card>
+</template>

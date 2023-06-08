@@ -1,0 +1,16 @@
+<template>
+    
+    <lightning-card title="Payment Entry Form" icon-name="custom:custom6">
+        <div>
+
+            
+            <lightning-input type="number" value={vccNumber}  name="ccNumber" label= "Credit Card Number" onchange={ccNumberHandler} placeholder="xxxx-xxxx-xxxx-xxxx" ></lightning-input>
+            <lightning-input type="number" value={vExpiryMonth} name="expiryMonth" label= "Expiry Month" onchange={expiryMonthHandler} placeholder="01"></lightning-input>
+            <lightning-input type="number" value={vExpiryYear} name="expiryYear" label= "Expiry Year"  onchange={expiryYearHandler} placeholder="12"></lightning-input>
+            <lightning-input type="password" value={vcvv} name="cvv" label= "CVV Number" placeholder="3 Digits Number" onchange={cvvHandler}></lightning-input>
+            <lightning-button variant="Brand" label="Submit"  onclick={createPmtRec}></lightning-button>
+            
+        </div>
+    </lightning-card>
+
+</template>
