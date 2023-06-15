@@ -19,6 +19,6 @@ node {
   printIn RUN_ARTIFACT_DIR
   
   def toolbelt = tool 'toolbelt'
-  
+  printIn toolbelt
   
   
